@@ -1,0 +1,268 @@
+:root {
+    --primary: #9C27B0;
+    --primaryDark: #89119D;
+    --secundary: #FFCE00;
+    --secundaryDark: rgb(233, 287, 2);
+    --white: #FFF;
+    --dark: #000;
+    --mainSouce: 'Staatliches', cursive;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 32.5%
+        /*1rem = 10px*/
+    ;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Globales */
+body {
+    background-color: var(--primary);
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 2.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    color: var(--secundary);
+    font-family: var(--mainSouce);
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+/** Header **/
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.header__logo {
+    margin: 3rem 0;
+}
+
+/** Footer **/
+.footer {
+    background-color: var(--primaryDark);
+    margin-top: 3rem;
+    padding: 1rem 0;
+}
+
+.footer__p {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: var(--mainSouce);
+}
+
+/** Navegacion **/
+.navegacion {
+    background-color: var(--primaryDark);
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+}
+
+
+.navegacion__enlace {
+    font-family: var(--mainSouce);
+    color: var(--white);
+    font-size: 5rem;
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+    color: var(--secundary);
+}
+
+/** Grid **/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/** Productos**/
+.product {
+    background-color: var(--primaryDark);
+    padding: 1.5rem;
+}
+
+.product__information {}
+
+.product__name {
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.product__price {
+    font-size: 3rem;
+    color: var(--secundary);
+}
+
+.product__name,
+.product__price {
+    padding: 1rem;
+    font-weight: bold;
+    font-family: var(--mainSouce);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+/** Graficos **/
+.grafico {
+    min-height: 30rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    grid-column: 1 / 3;
+}
+
+.grafico--camisas {
+    grid-row: 2 / 3;
+    background-image: url(../img/grafico1.jpg);
+}
+
+.grafico--node {
+    background-image: url(../img/grafico2.jpg);
+    grid-column: 1 / 3;
+    grid-row: 8 / 9;
+}
+
+@media (min-width: 768px) {
+    .grafico--node {
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+/** Grid Nosotros **/
+.nosotros {
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.nosotros__img {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    grid-row: 1 / 2;
+    width: auto;
+}
+
+@media (min-width: 768px) {
+    .nosotros__img {
+        grid-column: 2 / 3;
+    }
+}
+
+/** Bloques **/
+.bloques {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .bloques {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.bloque__titulo {
+    margin: 0;
+}
+
+/** pagina producto **/
+
+@media (min-width: 768px) {
+    .camisa {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+
+.formulario {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.formulario__campo {
+    border: 1rem solid var(--primaryDark);
+    background-color: transparent;
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: var(--mainSouce);
+    appearance: none;
+}
+
+.formulario__submit {
+    background-color: var(--secundary);
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: var(--mainSouce);
+    padding: 2rem;
+    transition: background-color .3s ease;
+    grid-column: 1 / 3;
+    cursor: pointer;
+}
+
+.formulario__submit:hoover {
+    background-color: var(--secundaryDark);
+}
